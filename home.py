@@ -4,5 +4,10 @@ st.set_page_config(
   page_title="Multipage App",
 )
 
-st.title("main page")
-st.sidebar.success("select a page above")
+st.title("Estatística Aplicada à Análise de Dados")
+st.write("Este site contém soluções baseadas em código, mais específicamente utilizando a biblioteca Pandas e afins, resolvendo e demonstrando gráficos relevantes para cada questão.")
+st.write("Ao lado esquerdo é possível navegar através de cada lista de exercicios e cada uma contém suas respectivas questões")
+
+st.sidebar.success("Selecione uma das opções acima")
+
+st.markdown(f"#### Feito por: Eugênio Araújo")
