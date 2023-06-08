@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-ds = pd.read_csv(r"csv\Question9MBcsv - Página1.csv")
+ds = pd.read_csv("Question9MBcsv - Página1.csv")
 
 
 st.title("Lista 1")
