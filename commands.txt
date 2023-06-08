@@ -1,0 +1,2 @@
+change to env: .\env\Scripts\Activate.ps1
+run project: streamlit run home.py 
