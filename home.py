@@ -14,7 +14,7 @@ st.write(
 
 st.sidebar.success("Selecione uma das listas de exercicio acima")
 
-st.markdown(f"#### Feito por: Eugênio Araújo")
+st.markdown(f"#### Feito por: Eugênio Araújo e Claudiano Lima")
 
 st.markdown(f"###### libraries: plotly, seaborn, pandas, numpy")
 
