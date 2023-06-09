@@ -1,2 +1,3 @@
 change to env: .\env\Scripts\Activate.ps1
 run project: streamlit run home.py 
+update module requierements: pipreqs --encoding=utf8 --force
