@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import matplotlib.pyplot as plt
 
 ds = pd.read_csv("Question9MBcsv - Página1.csv")
 
@@ -10,8 +11,14 @@ st.title("Lista 1")
 navigation = ["Questão 1", "Questão 2"]
 selection = st.sidebar.radio("Questões", navigation)
 
+
 def histogram():
-    fig = px.histogram(ds["Redação"], x="Redação", labels={"Redação": "Nota da redação"})
+    fig = px.histogram(
+        ds["Redação"],
+        x="Redação",
+        text_auto=True,
+        labels={"Redação": "Nota da redação"},
+    )
     fig.update_layout(bargap=0.2)
 
     tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
@@ -99,18 +106,52 @@ Política e Estatística."""
 
     elif nested_selection_1 == "Letra - C":
         st.subheader("Letra C")
-        st.write(
-            """Construa o histograma para as notas da variável Redação."""
-        )
+        st.write("""Construa o histograma para as notas da variável Redação.""")
         histogram()
+        histogramCode = """
+        def histogram():
+            fig = px.histogram(ds["Redação"], x="Redação", text_auto=True, labels={"Redação": "Nota da redação"})
+            fig.update_layout(bargap=0.2)
+            tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
+            with tab1:
+                st.plotly_chart(fig, theme="streamlit")
+            with tab2:
+                st.plotly_chart(fig, theme=None)
+         """
+        st.code(histogramCode, language="python")
 
     elif nested_selection_1 == "Letra - D":
         st.subheader("Letra D")
         st.write(
-            """(a) Após observar atentamente cada variável, e com o intuito de resumi-las, como você
-                    identificaria (qualitativa ordinal ou nominal e quantitativa discreta ou contínua) cada
-                    uma das 9 variáveis listadas?"""
+            """Construa a distribuição de freqüências da variável Metodologia e faça um gráfico
+            para indicar essa distribuição."""
         )
+        frequency = pd.crosstab(index=ds["Metodologia"], columns="Frequency")
+        col1, col2 = st.columns(2)
+        with col1:
+            st.header("Distribuição de frequência")
+            st.write(frequency)
+
+        with col2:
+            st.header("Gráfico de frequência")
+            fig = px.pie(
+                frequency,
+                values="Frequency",
+                names=frequency.index,
+                title="Distribuição de Frequência",
+            )
+            fig.update_layout(width=400, height=440)
+            st.plotly_chart(fig)
+
+        st.title("Código do gráfico de pizza")
+        frequencyCode = """
+            frequency = pd.crosstab(index=ds["Metodologia"], columns="Frequency")
+            st.header("Gráfico de frequência")
+            fig = px.pie(frequency, values='Frequency', names=frequency.index, title='Distribuição de Frequência')
+            fig.update_layout(width=400, height=440)
+            st.plotly_chart(fig)
+            """
+        st.code(frequencyCode, language="python")
 
     elif nested_selection_1 == "Letra - E":
         st.subheader("Letra E")
