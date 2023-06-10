@@ -200,17 +200,20 @@ obtido grau A em Metodologia?"""
         st.title("Gráfico de caixas")
         st.code(meanDataset, language="python")
         st.write(boxPlot)
-        st.header("Tabela de médias")
-        st.write(mean_df)
-
         meanDataset = """
             mean_values = ds.groupby("Seção")["Redação"].mean().reset_index()
             mean_df = pd.DataFrame({"Seção": mean_values["Seção"], "Média de notas": mean_values["Redação"]})
             mean_df = mean_df.sort_values(by="Média de notas", ascending=False)
             st.write(mean_df)
             """
+        col1, col2 = st.columns(2)
+        with col1:
+            st.header("Tabela de médias")
+            st.write(mean_df)
+        with col2:
+            st.header("Conclusão")
+            st.write("A partir dos graficos e tabelas mostradas, é possível perceber que a maior média de notas foi da Seção T")
         st.code(meanDataset, language="python")
-
 
 elif selection == "Questão 2":
     st.header("Descrição da questão 2")
