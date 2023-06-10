@@ -107,7 +107,6 @@ Política e Estatística."""
     elif nested_selection_1 == "Letra - C":
         st.subheader("Letra C")
         st.write("""Construa o histograma para as notas da variável Redação.""")
-        histogram()
         histogramCode = """
         def histogram():
             fig = px.histogram(ds["Redação"], x="Redação", text_auto=True, labels={"Redação": "Nota da redação"})
@@ -119,6 +118,7 @@ Política e Estatística."""
                 st.plotly_chart(fig, theme=None)
          """
         st.code(histogramCode, language="python")
+        histogram()
 
     elif nested_selection_1 == "Letra - D":
         st.subheader("Letra D")
@@ -156,26 +156,60 @@ Política e Estatística."""
     elif nested_selection_1 == "Letra - E":
         st.subheader("Letra E")
         st.write(
-            """(a) Após observar atentamente cada variável, e com o intuito de resumi-las, como você
-                    identificaria (qualitativa ordinal ou nominal e quantitativa discreta ou contínua) cada
-                    uma das 9 variáveis listadas?"""
+            """Sorteado ao acaso um dos 25 funcionários, qual a probabilidade de que ele tenha
+obtido grau A em Metodologia?"""
+        )
+        st.subheader("Resposta:")
+        st.write(
+            """
+            28%, como visto no gráfico de pizza da letra D
+            """
         )
 
     elif nested_selection_1 == "Letra - F":
         st.subheader("Letra F")
         st.write(
-            """(a) Após observar atentamente cada variável, e com o intuito de resumi-las, como você
-                    identificaria (qualitativa ordinal ou nominal e quantitativa discreta ou contínua) cada
-                    uma das 9 variáveis listadas?"""
+            """Se, em vez de um, sorteássemos dois, a probabilidade de que ambos tivessem tido A
+            em Metodologia é maior ou menor do que a resposta dada em (e)?"""
+        )
+        st.subheader("Resposta:")
+        st.write(
+            """
+            visto que a probabilidade de um funcionário é 28%, então, para dois casos cuja nota seja A, seria 28% vezes 28% =7.84%
+            Portanto, a probabilidade é menor
+            """
         )
 
     elif nested_selection_1 == "Letra - G":
         st.subheader("Letra G")
         st.write(
-            """(a) Após observar atentamente cada variável, e com o intuito de resumi-las, como você
-                    identificaria (qualitativa ordinal ou nominal e quantitativa discreta ou contínua) cada
-                    uma das 9 variáveis listadas?"""
+            """Como é o aproveitamento dos funcionários na disciplina Estatística, segundo a seção
+            a que eles pertencem?"""
         )
+        mean_values = ds.groupby("Seção")["Redação"].mean().reset_index()
+        mean_df = pd.DataFrame(
+            {"Seção": mean_values["Seção"], "Média de notas": mean_values["Redação"]}
+        )
+        mean_df = mean_df.sort_values(by="Média de notas", ascending=False)
+        boxPlot = px.box(ds, y="Redação", x="Seção", color="Seção")
+
+        meanDataset = """
+            boxPlot = px.box(ds, y="Redação", x="Seção", color="Seção")
+            st.write(boxPlot)
+            """
+        st.title("Gráfico de caixas")
+        st.code(meanDataset, language="python")
+        st.write(boxPlot)
+        st.header("Tabela de médias")
+        st.write(mean_df)
+
+        meanDataset = """
+            mean_values = ds.groupby("Seção")["Redação"].mean().reset_index()
+            mean_df = pd.DataFrame({"Seção": mean_values["Seção"], "Média de notas": mean_values["Redação"]})
+            mean_df = mean_df.sort_values(by="Média de notas", ascending=False)
+            st.write(mean_df)
+            """
+        st.code(meanDataset, language="python")
 
 
 elif selection == "Questão 2":
