@@ -2,13 +2,8 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import matplotlib.pyplot as plt
-from questions.lista_1.letter_A import *
-from questions.lista_1.letter_B import *
-from questions.lista_1.letter_C import *
-from questions.lista_1.letter_D import *
-from questions.lista_1.letter_E import *
-from questions.lista_1.letter_F import *
-from questions.lista_1.letter_G import *
+from questions.lista_1 import Questao1
+from questions.lista_1 import Questao2
 
 
 st.title("Lista 1")
@@ -27,7 +22,7 @@ if selection == "Questão 1":
             tabela, responda às questões:"""
     )
 
-    st.write(ds)
+    st.write(Questao1.ds)
     nested_navigation_1 = [
         "Letra - A",
         "Letra - B",
@@ -42,30 +37,34 @@ if selection == "Questão 1":
     row1_space1, row1_space2 = st.columns((2))
 
     if nested_selection_1 == "Letra - A":
-        letter_A()
+        Questao1.letter_A()
 
     elif nested_selection_1 == "Letra - B":
-        letter_B()
+        Questao1.letter_B()
 
     elif nested_selection_1 == "Letra - C":
-        letter_C()
+        Questao1.letter_C()
 
     elif nested_selection_1 == "Letra - D":
-        letter_D()
+        Questao1.letter_D()
 
     elif nested_selection_1 == "Letra - E":
-        letter_E()
+        Questao1.letter_E()
 
     elif nested_selection_1 == "Letra - F":
-        letter_F()
+        Questao1.letter_F()
 
     elif nested_selection_1 == "Letra - G":
-        letter_G()
+        Questao1.letter_G()
 
 elif selection == "Questão 2":
-    st.header("Descrição da questão 2")
-    nested_navigation_2 = ["Subpage 1", "Subpage 2"]
-    nested_selection_2 = st.sidebar.radio("Nested Navigation", nested_navigation_2)
+    st.header("""[Livro-texto] Cap. 2: ex. 11""")
+    st.write(
+        """Dispomos de uma relação de 200 aluguéis de imóveis urbanos e uma relação de 100
+aluguéis rurais."""
+    )
+    nested_navigation_2 = ["Letra - A e B", "Letra - C"]
+    nested_selection_2 = st.sidebar.radio("Letras", nested_navigation_2)
 
-    if nested_selection_2 == "Subpage 1":
-        st.subheader("Subpage 1")
+    if nested_selection_2 == "Letra - A e B":
+        Questao2.letter_A()

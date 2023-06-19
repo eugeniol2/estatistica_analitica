@@ -6,6 +6,7 @@ import csv_local
 
 ds = csv_local.getQuestionOneDataset()
 
+
 def histogram():
     fig = px.histogram(
         ds["Redação"],
@@ -20,6 +21,7 @@ def histogram():
         st.plotly_chart(fig, theme="streamlit")
     with tab2:
         st.plotly_chart(fig, theme=None)
+
 
 def letter_C():
     st.subheader("Letra C")
