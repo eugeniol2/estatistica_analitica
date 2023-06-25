@@ -4,12 +4,14 @@ import plotly.express as px
 import matplotlib.pyplot as plt
 from questions.lista_1 import Questao1
 from questions.lista_1 import Questao2
+from questions.lista_1 import Questao3
 
 
 st.title("Lista 1")
 
-navigation = ["Questão 1", "Questão 2"]
+navigation = ["Questão 1", "Questão 2", "Questão 3"]
 selection = st.sidebar.radio("Questões", navigation)
+st.set_option("deprecation.showPyplotGlobalUse", False)
 
 if selection == "Questão 1":
     st.header("[Livro-texto] Cap. 2: ex. 9 ")
@@ -68,3 +70,21 @@ aluguéis rurais."""
 
     if nested_selection_2 == "Letra - A e B":
         Questao2.letter_A()
+    if nested_selection_2 == "Letra - B":
+        Questao2.letter_B()
+    if nested_selection_2 == "Letra - C":
+        Questao2.letter_C()
+
+elif selection == "Questão 3":
+    st.header(
+        """Um artigo retirado da revista Technometrics (Vol. 19, 1977, p. 425) apresenta os seguintes dados sobre a taxa de octanagem de várias misturas de gasolina"""
+    )
+    nested_navigation_2 = ["Letra - B", "Letra - C", "Letra - D"]
+    nested_selection_2 = st.sidebar.radio("Letras", nested_navigation_2)
+
+    if nested_selection_2 == "Letra - B":
+        Questao3.letter_B()
+    if nested_selection_2 == "Letra - C":
+        Questao3.letter_C()
+    if nested_selection_2 == "Letra - D":
+        Questao3.letter_D()
