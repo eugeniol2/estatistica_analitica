@@ -95,6 +95,10 @@ df = pd.DataFrame(taxaDeOctanagem, columns=["Octanagem"])
 
 
 def letter_B():
+    st.subheader("Letra B")
+    st.write(
+        """(b) Construa a distribuição de frequência e o histograma. Use 8 intervalos de classe."""
+    )
     frequencyBeans = pd.cut(x=df["Octanagem"], bins=8).sort_index()
     st.write(frequencyBeans.value_counts().sort_index())
     sns.countplot(x=frequencyBeans.index, data=frequencyBeans)

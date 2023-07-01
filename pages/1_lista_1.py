@@ -5,11 +5,12 @@ import matplotlib.pyplot as plt
 from questions.lista_1 import Questao1
 from questions.lista_1 import Questao2
 from questions.lista_1 import Questao3
+from questions.lista_1 import Questao4
 
 
 st.title("Lista 1")
 
-navigation = ["Questão 1", "Questão 2", "Questão 3"]
+navigation = ["Questão 1", "Questão 2", "Questão 3", "Questão 4"]
 selection = st.sidebar.radio("Questões", navigation)
 st.set_option("deprecation.showPyplotGlobalUse", False)
 
@@ -65,26 +66,54 @@ elif selection == "Questão 2":
         """Dispomos de uma relação de 200 aluguéis de imóveis urbanos e uma relação de 100
 aluguéis rurais."""
     )
-    nested_navigation_2 = ["Letra - A e B", "Letra - C"]
+    nested_navigation_2 = ["Letra - A e B"]
     nested_selection_2 = st.sidebar.radio("Letras", nested_navigation_2)
 
     if nested_selection_2 == "Letra - A e B":
         Questao2.letter_A()
-    if nested_selection_2 == "Letra - B":
-        Questao2.letter_B()
-    if nested_selection_2 == "Letra - C":
-        Questao2.letter_C()
 
 elif selection == "Questão 3":
     st.header(
         """Um artigo retirado da revista Technometrics (Vol. 19, 1977, p. 425) apresenta os seguintes dados sobre a taxa de octanagem de várias misturas de gasolina"""
     )
-    nested_navigation_2 = ["Letra - B", "Letra - C", "Letra - D"]
-    nested_selection_2 = st.sidebar.radio("Letras", nested_navigation_2)
+    nested_navigation_3 = ["Letra - B", "Letra - C", "Letra - D"]
+    nested_selection_3 = st.sidebar.radio("Letras", nested_navigation_3)
 
-    if nested_selection_2 == "Letra - B":
+    if nested_selection_3 == "Letra - B":
         Questao3.letter_B()
-    if nested_selection_2 == "Letra - C":
+    if nested_selection_3 == "Letra - C":
         Questao3.letter_C()
-    if nested_selection_2 == "Letra - D":
+    if nested_selection_3 == "Letra - D":
         Questao3.letter_D()
+
+elif selection == "Questão 4":
+    st.header(
+        """O seguinte conjunto de dados representa as “vidas” de 40 baterias de carro da mesmamarca e mesmas características com aproximação até décimos do ano. As baterias tinham 	garantia para 3 anos."""
+    )
+    nested_navigation_4 = [
+        "Letra - A",
+        "Letra - B",
+        "Letra - C",
+        "Letra - D",
+        "Letra - E",
+        "Letra - F",
+    ]
+    nested_selection_4 = st.sidebar.radio("Letras", nested_navigation_4)
+
+    if nested_selection_4 == "Letra - A":
+        Questao4.letter_A()
+    if nested_selection_4 == "Letra - B":
+        Questao4.letter_B()
+        pass
+    if nested_selection_4 == "Letra - C":
+        Questao4.letter_C()
+        pass
+    if nested_selection_4 == "Letra - D":
+        Questao4.letter_D()
+        pass
+    if nested_selection_4 == "Letra - E":
+        Questao4.letter_E()
+        pass
+    if nested_selection_4 == "Letra - F":
+        Questao4.letter_F()
+        pass

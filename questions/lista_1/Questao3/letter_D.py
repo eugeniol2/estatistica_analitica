@@ -95,6 +95,11 @@ df = pd.DataFrame(taxaDeOctanagem, columns=["Octanagem"])
 
 
 def letter_D():
+    st.subheader("Letra D")
+    st.write(
+        """(d) Compare a forma dos dois histogramas em b e c. Ambos os histogramas mostram informações similares?"""
+    )
+    st.subheader("Resposta:")
     st.write(
         "Em termos gerais, aparenta mostrar maior pico entre os numeros 90.794 e 91.85 no grafico de 16 classes, já o de 8 mostra maiores valores entre 89.738 e 91.85 "
     )
