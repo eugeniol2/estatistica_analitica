@@ -10,6 +10,8 @@ from questions.lista_1 import Questao5
 from questions.lista_1 import Questao6
 from questions.lista_1 import Questao7
 from questions.lista_1 import Questao8
+from questions.lista_1 import Questao9
+from questions.lista_1 import Questao10
 
 
 st.title("Lista 1")
@@ -23,6 +25,8 @@ navigation = [
     "Questão 6",
     "Questão 7",
     "Questão 8",
+    "Questão 9",
+    "Questão 10",
 ]
 selection = st.sidebar.radio("Questões", navigation)
 st.set_option("deprecation.showPyplotGlobalUse", False)
@@ -197,3 +201,28 @@ Os dados estão a seguir."""
 
     if nested_selection_8 == "Letra - A, B e C":
         Questao8.letter_A()
+
+elif selection == "Questão 9":
+    st.title("[Livro-texto] Cap. 3: ex. 32")
+    st.write(
+        """Para decidir se o desempenho das duas corretoras do exercício 29 são semelhantes ou
+não, adotou-se o seguinte teste: """
+    )
+    nested_navigation_9 = ["Letra - A"]
+    nested_selection_9 = st.sidebar.radio("Letras", nested_navigation_9)
+
+    if nested_selection_9 == "Letra - A":
+        Questao9.letter_A()
+
+elif selection == "Questão 10":
+    st.title("[Livro-texto] Cap. 3: ex. 32")
+    st.write(
+        """No Problema 9, do Capítulo 2, temos os resultados de 25 funcionários em vários exames
+a que se submeteram. Sabe-se agora que os critérios adotados em cada exame não são
+comparáveis, por isso decidiu-se usar o desempenho relativo em cada exame. Essa medida
+será obtida do seguinte modo: """
+    )
+    nested_navigation_10 = ["Letra - A"]
+    nested_selection_10 = st.sidebar.radio("Letras", nested_navigation_10)
+    if nested_selection_10 == "Letra - A":
+        Questao10.letter_A()
