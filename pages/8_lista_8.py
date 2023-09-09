@@ -159,13 +159,13 @@ st.write(f"R² para X1 e Y (LETRA B): {r_quadrado_X1}")
 st.write("De acordo com o que estudei, o modelo que estiver mais proximo de 1, no resultadodo coeficiente de determinação, melhor ele é, logo: a etapa C é mais interessante.")
 
 st.title("Equação de Regressão Linear Múltipla:")
-st.write(f"Y = 0.7181528733241035 + -0.36071318407781794  * X1 + 0.24911094094101272 * X2")
+st.write("Y = 0.7181528733241035 + -0.36071318407781794  * X1 + 0.24911094094101272 * X2")
 
 
 st.subheader("Letra D3: Coeficiente de Determinação Múltipla e Coeficiente de Determinação Ajustado")
 
-st.write(f"R² Múltipla: 0.11646871647216961")
-st.write(f"R² Ajustado:-0.019459173301342725")
+st.write("R² Múltipla: 0.11646871647216961")
+st.write("R² Ajustado:-0.019459173301342725")
 
 st.write("Os valores de R² são baixos, indicando que as variáveis independentes X1 e X2 não explicam muito da variabilidade em Y")
 
