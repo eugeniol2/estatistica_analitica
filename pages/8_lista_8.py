@@ -13,6 +13,7 @@ import csv_local.datasets as csv_local
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 ds = csv_local.getCereaisDataset()
+ds.to_csv('cereais.csv', index=False)
 
 
 st.title("Correlação e Regressão")
