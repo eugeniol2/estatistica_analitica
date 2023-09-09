@@ -156,30 +156,29 @@ st.write(f"R² para X2 e Y (LETRA C): {r_quadrado_X2}")
 # R² obtido na etapa C (X1 e Y)
 st.write(f"R² para X1 e Y (LETRA B): {r_quadrado_X1}")
 
-# st.write("De acordo com o que estudei, o modelo que estiver mais proximo de 1, no resultadodo coeficiente de determinação, melhor ele é, logo: a etapa C é mais interessante.")
+st.write("De acordo com o que estudei, o modelo que estiver mais proximo de 1, no resultadodo coeficiente de determinação, melhor ele é, logo: a etapa C é mais interessante.")
 
-# st.title("Equação de Regressão Linear Múltipla:")
-# st.write("Y = 0.7181528733241035 + -0.36071318407781794  * X1 + 0.24911094094101272 * X2")
+st.title("Equação de Regressão Linear Múltipla:")
+st.write("Y = 0.7181528733241035 + -0.36071318407781794  * X1 + 0.24911094094101272 * X2")
 
+st.subheader("Coeficiente de Determinação Múltipla e Coeficiente de Determinação Ajustado")
 
-# st.subheader("Letra D3: Coeficiente de Determinação Múltipla e Coeficiente de Determinação Ajustado")
+st.write("R² Múltipla: 0.11646871647216961")
+st.write("R² Ajustado:-0.019459173301342725")
 
-# st.write("R² Múltipla: 0.11646871647216961")
-# st.write("R² Ajustado:-0.019459173301342725")
+st.write("Os valores de R² são baixos, indicando que as variáveis independentes X1 e X2 não explicam muito da variabilidade em Y")
 
-# st.write("Os valores de R² são baixos, indicando que as variáveis independentes X1 e X2 não explicam muito da variabilidade em Y")
+# Etapa 4: Conclusão da comparação
+st.subheader("Letra D4: Conclusão")
 
-# # Etapa 4: Conclusão da comparação
-# st.subheader("Letra D4: Conclusão")
+st.title("Observações")
+st.write("Efeituei o treinamento de um modelo de regressão linear utilizando o SKLEARN")
+st.code("""X = ds[['X1', 'X2']], y = ds['Y'], modelo_regressao_multipla = LinearRegression().fit(X, y)""", language='python')
 
-# st.title("Observações")
-# st.write("Efeituei o treinamento de um modelo de regressão linear utilizando o SKLEARN")
-# st.code("""X = ds[['X1', 'X2']], y = ds['Y'], modelo_regressao_multipla = LinearRegression().fit(X, y)""", language='python')
+st.write("Nisso foi possível extrair o coeficiente de determinação multipla")
+st.code("""r_quadrado_multipla = modelo_regressao_multipla.score(X, y)""", language='python')
+st.write("Pois de acordo com a documentação do sklearn o .score retorna o coeficiente, seja ele simples ou multiplo")
 
-# st.write("Nisso foi possível extrair o coeficiente de determinação multipla")
-# st.code("""r_quadrado_multipla = modelo_regressao_multipla.score(X, y)""", language='python')
-# st.write("Pois de acordo com a documentação do sklearn o .score retorna o coeficiente, seja ele simples ou multiplo")
-
-# st.write("Por fim, apliquei a formula seguinte para obter o coeficiente ajustado")
-# st.code("""r_quadrado_ajustado = 1 - ((1 - r_quadrado_multipla) * (n - 1) / (n - p - 1))""", language='python')
+st.write("Por fim, apliquei a formula seguinte para obter o coeficiente ajustado")
+st.code("""r_quadrado_ajustado = 1 - ((1 - r_quadrado_multipla) * (n - 1) / (n - p - 1))""", language='python')
 
