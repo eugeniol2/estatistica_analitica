@@ -10,6 +10,7 @@ from scipy import stats
 from scipy.stats import norm
 import math
 import csv_local.datasets as csv_local
+from sklearn.linear_model import LinearRegression
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 ds = csv_local.getCereaisDataset()
@@ -159,7 +160,7 @@ st.write("De acordo com o que estudei, o modelo que estiver mais proximo de 1, n
 
 
 # Ajuste um modelo de regressão linear múltipla com X1 e X2
-from sklearn.linear_model import LinearRegression
+
 
 X = ds[['X1', 'X2']]
 y = ds['Y']
