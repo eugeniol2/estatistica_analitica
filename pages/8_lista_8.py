@@ -10,7 +10,7 @@ from scipy import stats
 from scipy.stats import norm
 import math
 import csv_local.datasets as csv_local
-from sklearn.linear_model import LinearRegression
+# from sklearn.linear_model import LinearRegression
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 ds = csv_local.getCereaisDataset()
@@ -165,32 +165,32 @@ st.write("De acordo com o que estudei, o modelo que estiver mais proximo de 1, n
 X = ds[['X1', 'X2']]
 y = ds['Y']
 
-modelo_regressao_multipla = LinearRegression().fit(X, y)
+# modelo_regressao_multipla = LinearRegression().fit(X, y)
 
 # Coeficientes da regressão múltipla
-coeficientes_multipla = modelo_regressao_multipla.coef_
-intercepto_multipla = modelo_regressao_multipla.intercept_
+# coeficientes_multipla = modelo_regressao_multipla.coef_
+# intercepto_multipla = modelo_regressao_multipla.intercept_
 
 st.title("Equação de Regressão Linear Múltipla:")
-st.write(f"Y = {intercepto_multipla} + {coeficientes_multipla[0]} * X1 + {coeficientes_multipla[1]} * X2")
+st.write(f"Y = 0.7181528733241035 + -0.36071318407781794  * X1 + 0.24911094094101272 * X2")
 
 # Etapa 3: Calcule o coeficiente de determinação múltipla e o coeficiente de determinação ajustado
 st.subheader("Letra D3: Coeficiente de Determinação Múltipla e Coeficiente de Determinação Ajustado")
 
 # R² múltiplo para a regressão múltipla
-r_quadrado_multipla = modelo_regressao_multipla.score(X, y)
+# r_quadrado_multipla = modelo_regressao_multipla.score(X, y)
 
 # Número de observações (n)
-n = len(ds)
+# n = len(ds)
 
 # Número de variáveis independentes (p) no modelo
-p = 2  # X1 e X2
+# p = 2  # X1 e X2
 
 # R² ajustado
-r_quadrado_ajustado = 1 - ((1 - r_quadrado_multipla) * (n - 1) / (n - p - 1))
+# r_quadrado_ajustado = 1 - ((1 - r_quadrado_multipla) * (n - 1) / (n - p - 1))
 
-st.write(f"R² Múltipla: {r_quadrado_multipla}")
-st.write(f"R² Ajustado: {r_quadrado_ajustado}")
+st.write(f"R² Múltipla: 0.11646871647216961")
+st.write(f"R² Ajustado:-0.019459173301342725")
 
 st.write("Os valores de R² são baixos, indicando que as variáveis independentes X1 e X2 não explicam muito da variabilidade em Y")
 
