@@ -10,7 +10,6 @@ from scipy import stats
 from scipy.stats import norm
 import math
 import csv_local.datasets as csv_local
-import sklearn
 
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -173,7 +172,7 @@ st.write("Os valores de R² são baixos, indicando que as variáveis independent
 st.subheader("Letra D4: Conclusão")
 
 st.title("Observações")
-st.write("Efeituei o treinamento de um modelo de regressão linear utilizando o SKLEARN")
+st.write("Efeituei o treinamento de um modelo de regressão linear utilizando o sklearn")
 st.code("""X = ds[['X1', 'X2']], y = ds['Y'], modelo_regressao_multipla = LinearRegression().fit(X, y)""", language='python')
 
 st.write("Nisso foi possível extrair o coeficiente de determinação multipla")
