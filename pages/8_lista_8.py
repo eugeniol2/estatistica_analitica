@@ -158,36 +158,11 @@ st.write(f"R² para X1 e Y (LETRA B): {r_quadrado_X1}")
 
 st.write("De acordo com o que estudei, o modelo que estiver mais proximo de 1, no resultadodo coeficiente de determinação, melhor ele é, logo: a etapa C é mais interessante.")
 
-
-# Ajuste um modelo de regressão linear múltipla com X1 e X2
-
-
-X = ds[['X1', 'X2']]
-y = ds['Y']
-
-# modelo_regressao_multipla = LinearRegression().fit(X, y)
-
-# Coeficientes da regressão múltipla
-# coeficientes_multipla = modelo_regressao_multipla.coef_
-# intercepto_multipla = modelo_regressao_multipla.intercept_
-
 st.title("Equação de Regressão Linear Múltipla:")
 st.write(f"Y = 0.7181528733241035 + -0.36071318407781794  * X1 + 0.24911094094101272 * X2")
 
-# Etapa 3: Calcule o coeficiente de determinação múltipla e o coeficiente de determinação ajustado
+
 st.subheader("Letra D3: Coeficiente de Determinação Múltipla e Coeficiente de Determinação Ajustado")
-
-# R² múltiplo para a regressão múltipla
-# r_quadrado_multipla = modelo_regressao_multipla.score(X, y)
-
-# Número de observações (n)
-# n = len(ds)
-
-# Número de variáveis independentes (p) no modelo
-# p = 2  # X1 e X2
-
-# R² ajustado
-# r_quadrado_ajustado = 1 - ((1 - r_quadrado_multipla) * (n - 1) / (n - p - 1))
 
 st.write(f"R² Múltipla: 0.11646871647216961")
 st.write(f"R² Ajustado:-0.019459173301342725")
