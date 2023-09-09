@@ -10,7 +10,7 @@ from scipy import stats
 from scipy.stats import norm
 import math
 import csv_local.datasets as csv_local
-# from sklearn.linear_model import LinearRegression
+
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 ds = csv_local.getCereaisDataset()
